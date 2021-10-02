@@ -1,0 +1,20 @@
+  483  ls
+  484  head top-1000-cust-ids.txt 
+  485  cut -f 2 ../amazon_reviews_us_Books_v1_02.tsv | tail -n +2 | sort -n | uniq -c | sort -rn | head -n 1000 > top-1000-cust-ids.txt 
+  486  ls
+  487  head top-1000-cust-ids.txt 
+  488  for id in $(cat top-1000-cust-ids.txt); do    awk -F $'\t' -v var="${id}" ' $2 == var ' ../amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/${id}.txt; done
+  489  ls | wc -l
+  490  ls CUSTOMERS | wc -l
+  491  ls CUSTOMERS
+  492  ls CUSTOMERS/???.txt
+  493  ls CUSTOMERS/???.txt | wc -l
+  494  ls CUSTOMERS/????????.txt | wc -l
+  495  rm CUSTOMERS/???.txt 
+  496  ls CUSTOMERS | wc -l
+  497  ls CUSTOMERS/
+  498  head 53096155.txt
+  499  head CUSTOMERS/53096155.txt
+  500  history > cmds.log
+  501  nano cmds.log
+  502  history | tail -n 20 > cmds.log
